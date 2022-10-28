@@ -3,7 +3,6 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { URL } from "../../App";
 import { overlayActions } from "../../store/ovarlay";
 
 const ReviewOvarlay = () => {
@@ -26,7 +25,7 @@ const ReviewOvarlay = () => {
   const postReview = async () => {
     try {
       const { data } = await axios.post(
-        `${URL}/api/v1/products/${product?._id}/reviews`,
+        `http://127.0.0.1:8000/api/v1/products/${product?._id}/reviews`,
         {
           review: review,
           rating: +rating,
